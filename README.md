@@ -6,9 +6,9 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/mspdl/angular-dashboard?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/mspdl/angular-dashboard?style=for-the-badge)
 
-<img src="image.png" alt="Image Sample">
+PHOTO SOON
 
-> SOON
+> Full description SOON
 
 ### Adjusts and improvements
 
