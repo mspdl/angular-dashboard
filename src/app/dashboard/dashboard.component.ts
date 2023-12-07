@@ -31,5 +31,13 @@ export class DashboardComponent implements OnInit {
 
   showCharts(): void {}
 
+  getDataTable(): void {
+    const dataTable = new google.visualization.DataTable();
 
+    dataTable.addColumn('string', 'Month');
+    dataTable.addColumn('number', 'Quantity');
+    dataTable.addRows(this.data);
+
+    return dataTable;
+  }
 }
