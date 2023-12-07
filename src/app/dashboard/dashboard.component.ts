@@ -31,7 +31,14 @@ export class DashboardComponent implements OnInit {
 
   showCharts(): void {}
 
-  getDataTable(): void {
+  showPieChart(): void {
+    const pie_chart_element = document.getElementById('pie_chart');
+    const chart = new google.visualization.PieChart(pie_chart_element);
+
+    chart.draw(this.getGraphDataTable(), this.getGraphOptions());
+  }
+
+  getGraphDataTable(): any {
     const dataTable = new google.visualization.DataTable();
 
     dataTable.addColumn('string', 'Month');
@@ -39,5 +46,13 @@ export class DashboardComponent implements OnInit {
     dataTable.addRows(this.data);
 
     return dataTable;
+  }
+
+  getGraphOptions(): any {
+    return {
+      title: 'Number of registrations in the first semester',
+      width: 400,
+      height: 300,
+    };
   }
 }
