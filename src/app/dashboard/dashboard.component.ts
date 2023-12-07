@@ -35,6 +35,7 @@ export class DashboardComponent implements OnInit {
     this.showDonutChart();
     this.showBarChart();
     this.showColumnChart();
+    this.showLineChart();
   }
 
   showPieChart(): void {
@@ -75,6 +76,13 @@ export class DashboardComponent implements OnInit {
     const chart = new google.visualization.ColumnChart(columnChart);
 
     chart.draw(this.getGraphDataTable(), this.getGraphOptions('Column Chart'));
+  }
+
+  showLineChart(): void {
+    const lineChart = document.getElementById('line_chart');
+    const chart = new google.visualization.LineChart(lineChart);
+
+    chart.draw(this.getGraphDataTable(), this.getGraphOptions('Line Chart'));
   }
 
   getGraphDataTable(): any {
