@@ -25,19 +25,29 @@ export class DashboardComponent implements OnInit {
       google.charts.load('current', { packages: ['corechart'] });
       setTimeout(() => {
         google.charts.setOnLoadCallback(this.showCharts());
-      }, 1000);
+      }, 100);
     }
   }
 
   showCharts(): void {
     this.showPieChart();
+    this.show3dPieChart();
   }
 
   showPieChart(): void {
-    const pie_chart_element = document.getElementById('pie_chart');
-    const chart = new google.visualization.PieChart(pie_chart_element);
+    const pieChartElement = document.getElementById('pie_chart');
+    const chart = new google.visualization.PieChart(pieChartElement);
 
-    chart.draw(this.getGraphDataTable(), this.getGraphOptions());
+    chart.draw(this.getGraphDataTable(), this.getGraphOptions('Pie Chart'));
+  }
+
+  show3dPieChart(): void {
+    const pieChartElement3d = document.getElementById('3d_pie_chart');
+    const chart = new google.visualization.PieChart(pieChartElement3d);
+    const options = this.getGraphOptions('3D Pie Chart');
+
+    options['is3D'] = true;
+    chart.draw(this.getGraphDataTable(), options);
   }
 
   getGraphDataTable(): any {
@@ -50,9 +60,9 @@ export class DashboardComponent implements OnInit {
     return dataTable;
   }
 
-  getGraphOptions(): any {
+  getGraphOptions(graphType: string): any {
     return {
-      title: 'Number of registrations in the first semester',
+      title: `Number of registrations in the first semester (${graphType})`,
       width: 400,
       height: 300,
     };
