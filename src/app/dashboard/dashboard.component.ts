@@ -29,7 +29,9 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  showCharts(): void {}
+  showCharts(): void {
+    this.showPieChart();
+  }
 
   showPieChart(): void {
     const pie_chart_element = document.getElementById('pie_chart');
