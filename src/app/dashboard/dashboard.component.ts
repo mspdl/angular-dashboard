@@ -67,22 +67,28 @@ export class DashboardComponent implements OnInit {
   showBarChart(): void {
     const barChart = document.getElementById('bar_chart');
     const chart = new google.visualization.BarChart(barChart);
+    const options = this.getGraphOptions("Bar Chart");
 
-    chart.draw(this.getGraphDataTable(), this.getGraphOptions('Bar Chart'));
+    options["legend"] = {position: 'none'}
+    chart.draw(this.getGraphDataTable(), options);
   }
 
   showColumnChart(): void {
     const columnChart = document.getElementById('column_chart');
     const chart = new google.visualization.ColumnChart(columnChart);
+    const options = this.getGraphOptions("Column Chart");
 
-    chart.draw(this.getGraphDataTable(), this.getGraphOptions('Column Chart'));
+    options["legend"] = {position: 'none'}
+    chart.draw(this.getGraphDataTable(), options);
   }
 
   showLineChart(): void {
     const lineChart = document.getElementById('line_chart');
     const chart = new google.visualization.LineChart(lineChart);
+    const options = this.getGraphOptions("Line Chart");
 
-    chart.draw(this.getGraphDataTable(), this.getGraphOptions('Line Chart'));
+    options["legend"] = {position: 'none'}
+    chart.draw(this.getGraphDataTable(), options);
   }
 
   getGraphDataTable(): any {
