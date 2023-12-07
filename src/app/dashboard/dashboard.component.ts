@@ -32,6 +32,7 @@ export class DashboardComponent implements OnInit {
   showCharts(): void {
     this.showPieChart();
     this.show3dPieChart();
+    this.showDonutChart();
   }
 
   showPieChart(): void {
@@ -47,6 +48,16 @@ export class DashboardComponent implements OnInit {
     const options = this.getGraphOptions('3D Pie Chart');
 
     options['is3D'] = true;
+    chart.draw(this.getGraphDataTable(), options);
+  }
+
+  showDonutChart(): void {
+    const donutChart = document.getElementById('donut_chart');
+    const chart = new google.visualization.PieChart(donutChart);
+    const options = this.getGraphOptions('Donut Chart');
+    const pieHoleSize = 0.4;
+
+    options['pieHole'] = pieHoleSize;
     chart.draw(this.getGraphDataTable(), options);
   }
 
