@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
       google.charts.load('current', { packages: ['corechart'] });
       setTimeout(() => {
         google.charts.setOnLoadCallback(this.showCharts());
-      }, 100);
+      }, 200);
     }
   }
 
@@ -33,6 +33,7 @@ export class DashboardComponent implements OnInit {
     this.showPieChart();
     this.show3dPieChart();
     this.showDonutChart();
+    this.showBarChart();
   }
 
   showPieChart(): void {
@@ -59,6 +60,13 @@ export class DashboardComponent implements OnInit {
 
     options['pieHole'] = pieHoleSize;
     chart.draw(this.getGraphDataTable(), options);
+  }
+
+  showBarChart(): void {
+    const barChart = document.getElementById('bar_chart');
+    const chart = new google.visualization.BarChart(barChart);
+
+    chart.draw(this.getGraphDataTable(), this.getGraphOptions('Bar Chart'));
   }
 
   getGraphDataTable(): any {
