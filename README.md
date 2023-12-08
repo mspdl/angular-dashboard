@@ -6,9 +6,9 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/mspdl/angular-dashboard?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/mspdl/angular-dashboard?style=for-the-badge)
 
-PHOTO SOON
+<img src="image.png" alt="Image Sample">
 
-> Full description SOON
+> In this project we can view some dashboard using Google Charts library
 
 ### Adjusts and improvements
 
