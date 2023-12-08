@@ -13,6 +13,13 @@ describe('DashboardComponent', () => {
       providers: [DataService],
     }).compileComponents();
 
+    window['google'] = {
+      charts: {
+        load: function (): void {},
+        setOnLoadCallback: (callback) => callback(),
+      },
+    };
+
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -21,4 +28,18 @@ describe('DashboardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call init() function', () => {
+    const spyOnInit = spyOn(component, 'init');
+    component.ngOnInit();
+    expect(spyOnInit).toHaveBeenCalled();
+  });
+
+  it('should call showCharts() function', () => {
+    const showChartsInit = spyOn(component, 'showCharts');
+    component.showCharts();
+    expect(showChartsInit).toHaveBeenCalled();
+  });
+
+
 });

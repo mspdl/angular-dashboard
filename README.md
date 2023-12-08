@@ -14,9 +14,9 @@ PHOTO SOON
 
 The project is working and it is almost finished:
 
-- [ ] Dashboard working
-- [ ] Finish README and documentation
-- [ ] Unit Tests without erros
+- [x] Dashboard working
+- [x] Finish README and documentation
+- [x] Unit Tests without errors
 - [ ] 90%+ Code Coverage
 - [ ] Add this project to my portfolio
 
